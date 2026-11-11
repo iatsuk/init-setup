@@ -141,8 +141,10 @@ preference.
 - Do refactor when the result is genuinely smaller, simpler, safer or easier to read. A smaller
   diff does not beat clearly better code — but it does beat merely rearranged code.
 - Small functions are a means, not a goal. When a reader has to jump through a chain of one- and
-  two-line helpers to follow a single thought, readability has gotten worse. If a helper is that
-  small and has one caller, inline it — that is not duplication.
+  two-line helpers to follow a single thought, readability has gotten worse. Never write a method
+  of a few lines whose single caller could hold its code — put the code there, guard clauses
+  included. That holds for methods that only forward a call, and over "copy its shape" when the
+  neighbour you copy delegates the same way. Inlining one is not duplication.
 - Real duplication is two functions doing the same thing with a difference that can become a
   parameter. Extract the difference into an argument; a lambda is a perfectly good argument.
 
@@ -179,8 +181,8 @@ dense — but they still say why, and new code there matches that density.
 Do not write exhaustive tests that walk every function and every edge case. Cover the common
 cases; one case may assert several related behaviours rather than being split across many. A new
 focused test is what you add when a bug turns up. Stay in the style of the existing suite — its
-framework, its fixtures, and whether it mocks at all. A test name states what it asserts, without
-articles.
+framework, its fixtures, and whether it mocks at all. A test name states what it asserts in at
+most five words, without articles; the detail belongs in its assertions.
 
 ### Performance work
 
