@@ -176,6 +176,31 @@ time and tokens and adds nothing.
 Where a file's choices are genuinely non-obvious and expensive to rediscover, its comments may be
 dense — but they still say why, and new code there matches that density.
 
+### Texts in the developer's name
+
+A commit message, a PR description, a review reply, an issue or a mail to a list goes out under the
+developer's name and is read by people who give their time to it. It has to read as the developer
+wrote it. Nothing is posted, pushed or sent before the developer has approved the exact text.
+
+- **Write as the developer speaks.** Plain English with the correct technical terms, short
+  sentences, no polished or idiomatic phrases. Do not state agreement or opinions for the developer
+  ("that makes sense", "I agree that…"); start with what was done.
+- **One idea per sentence.** A sentence that packs several facts, numbers and brackets is easy for
+  a model and hard for a person. Say what it means first, then the detail, and leave out numbers
+  and identifiers the reader does not need to follow the point.
+- **A reply is a conversation, not a publication.** It addresses the person it answers. Someone who
+  opens the thread later should still follow it: a short summary first, and a sentence before each
+  table that says what it shows. But no paragraph addressed to an audience, and no explaining to a
+  reviewer what the reviewer proposed.
+- **Show doubt where there is doubt.** Where a choice is open, say what was considered and what it
+  would cost, and ask for the other person's view ("I could try X, but it makes the solution more
+  complex. What do you think?"), not a flat statement followed by an instruction.
+- **Thank people for their time**, in plain words, where it is true.
+- **Answer once.** No interim "I will do X" message when the result follows within a day; one reply
+  with the change and the numbers.
+- **One issue carries the history.** When the approach changes, update the existing issue and keep
+  the earlier approaches, with the reason each was dropped, in its description.
+
 ### Tests
 
 Do not write exhaustive tests that walk every function and every edge case. Cover the common
